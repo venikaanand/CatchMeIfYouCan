@@ -13,6 +13,12 @@ from .forms import SquirrelUpdateForm, SquirrelAddForm,SquirrelAllForm
 
 # Create your views here.
 
+def squirrel_list(request):
+	list_Sq = SquirrelModel.objects.all()
+	context = {'squirrels': list_Sq}
+	return render(request, 'polls/list_squirrel.html', context)
+
+
 def squirrel_map(request):
 	list_Sq = SquirrelModel.objects.all()
 	context = {'squirrels': list_Sq}
